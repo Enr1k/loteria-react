@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Card from './Card';
 import * as serviceWorker from './serviceWorker';
 
+import { cards } from './cards'
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+    <Card img_src={cards[0].img_src} />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
