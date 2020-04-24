@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Board from './Board'
+import cardLoader from './cards';
 import './App.css';
 
 class App extends Component {
@@ -11,9 +12,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://my-json-server.typicode.com/enr1k/loteria-db/posts')
-      .then(response => { return response.json(); })
-      .then(card => { this.setState({ cards: card }) }); // gets card from json database
+  //   fetch('https://my-json-server.typicode.com/enr1k/loteria-db/posts')
+  //     .then(response => { return response.json(); })
+  //     .then(card => { this.setState({ cards: card }) }); // gets card from json database
+
+    const cards = cardLoader()
+    this.setState({ cards });
   }
 
   render () {
